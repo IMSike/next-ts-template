@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Carousel from '../components/caroussel.tsx'
+import CardSlider from '../components/cardSlider.tsx'
 import infos from '../env/infos.tsx'
-
 import Icon from "@mdi/react";
 import { mdiEmail, mdiMapMarker, mdiPhone } from "@mdi/js";
 
@@ -51,9 +51,7 @@ export default class Home extends React.Component<IProps, IState> {
             {infos.accroche}
           </p>
         </div>
-        <p className={styles.description}>
-          {infos.description}
-        </p>
+        <CardSlider/>
       </div>
     )
   }
@@ -61,18 +59,20 @@ export default class Home extends React.Component<IProps, IState> {
   renderContact = () => {
     return(
       <div className={styles.contactContainer}>
-        <h1>Contact</h1>
-        <div className={styles.contactLine}>
-          <Icon path={mdiEmail} title={"mail"} size={1} color="black"/>
-          <p>{infos.mail}</p>
-        </div>
-        <div className={styles.contactLine}>
-          <Icon path={mdiPhone} title={"mail"} size={1} color="black"/>
-          <p>{infos.tel}</p>
-        </div>
-        <div className={styles.contactLine}>
-          <Icon path={mdiMapMarker} title={"mail"} size={1} color="black"/>
-          <p>{infos.adr}</p>
+        <div className={styles.contactContentContainer}>
+          <h1 className={styles.contactTitle}>Contact</h1>
+          <div className={styles.contactLine}>
+            <Icon path={mdiEmail} title={"mail"} size={1} color={typeof window === "undefined" ? "black" : getComputedStyle(document.documentElement).getPropertyValue('--mainColor')}/>
+            <p>{infos.mail}</p>
+          </div>
+          <div className={styles.contactLine}>
+            <Icon path={mdiPhone} title={"mail"} size={1} color={typeof window === "undefined" ? "black" : getComputedStyle(document.documentElement).getPropertyValue('--mainColor')}/>
+            <p>{infos.tel}</p>
+          </div>
+          <div className={styles.contactLine}>
+            <Icon path={mdiMapMarker} title={"mail"} size={1} color={typeof window === "undefined" ? "black" : getComputedStyle(document.documentElement).getPropertyValue('--mainColor')}/>
+            <p>{infos.adr}</p>
+          </div>
         </div>
       </div>
     )
@@ -87,7 +87,6 @@ export default class Home extends React.Component<IProps, IState> {
   }
 
   render() {
-    console.log("TEST re-render")
     return(
       <div className={styles.container}>
         {this.renderHead()}

@@ -1,89 +1,195 @@
-.slide-wrapper-container {
-  height: 45vh;
-  width: 100vw;
-  overflow: hidden;
-  position: fixed;
-  top:0;
-}
-
+.slide-wrapper-container,
 .slide-wrapper-container-full-screen {
-  height: 100vh;
   width: 100vw;
   overflow: hidden;
   position: fixed;
   top:0;
 }
-
-.slider-prev-btn-container {
-  left: 2vw;
+.slide-wrapper-container {
+  animation-duration: var(--animationDurationForTop);
+  animation-name: slideFullScreenToTop;
+  height: 45vh;
 }
+.slide-wrapper-container-full-screen {
+  animation-duration: var(--animationDurationForFullScreen);
+  animation-name: slideTopToFullScreen;
+  height: 100vh;
+}
+.slider-prev-btn-container-full-screen,
+.slider-prev-btn-container {
+  left: var(--slideBtnSpaceFromSide);
+}
+.slider-full-screen-btn-container,
+.slider-full-screen-btn-container-full-screen,
+.slider-next-btn-container-full-screen,
 .slider-next-btn-container {
-  right: 2vw;
+  right: var(--slideBtnSpaceFromSide);
+}
+.slider-full-screen-btn-container,
+.slider-prev-btn-container,
+.slider-next-btn-container {
+  height: var(--slideBtnSize);
+  width: var(--slideBtnSize);
 }
 .slider-prev-btn-container,
 .slider-next-btn-container {
-  top:  20vh;
+  top:  var(--slideArrowBtnSpaceFromTop);
+  animation-duration: var(--animationDurationForFullScreen);
+  animation-name: slideFullScreenBtnToTop;
+}
+.slider-full-screen-btn-container,
+.slider-full-screen-btn-container-full-screen,
+.slider-prev-btn-container-full-screen,
+.slider-next-btn-container-full-screen,
+.slider-prev-btn-container,
+.slider-next-btn-container {
   position: absolute;
   z-index: 1;
-  border: 1px solid white;
+  border: var(--slideBorderBtnSize) solid var(--mainColor);
   border-radius: 100px;
-  background-color: rgba(240,240,240,0.5);
-  height: 5vh;
-  width: 5vh;
+  background-color: var(--slideBtnBackgroundColor);
   text-align:center;
 }
-
+.slider-prev-btn-container-full-screen,
+.slider-next-btn-container-full-screen {
+  animation-duration: var(--animationDurationForFullScreen);
+  animation-name: slideFullScreenBtnToFullScreen;
+  top:  var(--slideArrowBtnSpaceFromTopInFullScreen);
+}
+.slider-full-screen-btn-container-full-screen,
+.slider-prev-btn-container-full-screen,
+.slider-next-btn-container-full-screen {
+  height: var(--slideBtnSizeInFullScreen);
+  width: var(--slideBtnSizeInFullScreen);
+}
+.slider-full-screen-btn-container,
+.slider-full-screen-btn-container-full-screen {
+  top:  var(--slideFullScreenBtnSpaceFromTop);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.slider-prev-btn-container-full-screen p,
+.slider-next-btn-container-full-screen p,
 .slider-next-btn-container p,
 .slider-prev-btn-container p {
   margin: 0;
   padding: 0;
-  font-size: 4vh;
-  color:white;
+  color: var(--mainColor);
 }
-
+.slider-next-btn-container p,
+.slider-prev-btn-container p {
+  font-size: var(--slideArrowSizeInBtn);
+  animation-duration: var(--animationDurationForFullScreen);
+  animation-name: slideFullScreenArrowsToTop;
+}
+.slider-prev-btn-container-full-screen p,
+.slider-next-btn-container-full-screen p {
+  font-size: var(--slideArrowSizeInBtnInFullScreen);
+  animation-duration: var(--animationDurationForFullScreen);
+  animation-name: slideFullScreenArrowsToFullScreen;
+}
+.slider-full-screen-btn-container:hover,
+.slider-prev-btn-container:hover,
+.slider-next-btn-container:hover,
+.slider-full-screen-btn-container-full-screen:hover,
+.slider-prev-btn-container-full-screen:hover,
+.slider-next-btn-container-full-screen:hover {
+  transition-property: all;
+  transition-duration: var(--allTransitionDuration);
+  background-color: var(--slideBtnHoverBackgroundColor);
+}
+.slider-full-screen-btn-container:hover,
 .slider-prev-btn-container:hover,
 .slider-next-btn-container:hover {
-  transition-property: all;
-  transition-duration: 1s;
-  background-color: rgba(220,220,220,0.8);
-  height: 8vh;
-  width: 8vh;
+  height: var(--slideBtnHoverSize);
+  width: var(--slideBtnHoverSize);
 }
 .slider-next-btn-container:hover p,
 .slider-prev-btn-container:hover p {
-  font-size: 6vh;
+  font-size: var(--slideArrowHoverSizeInBtn);
   transition-property: all;
-  transition-duration: 1s;
+  transition-duration: var(--allTransitionDuration);
+}
+.slider-full-screen-btn-container-full-screen:hover,
+.slider-prev-btn-container-full-screen:hover,
+.slider-next-btn-container-full-screen:hover {
+  height: var(--slideBtnHoverSizeInFullScreen);
+  width: var(--slideBtnHoverSizeInFullScreen);
+}
+.slider-next-btn-container-full-screen:hover p,
+.slider-prev-btn-container-full-screen:hover p {
+  font-size: var(--slideArrowHoverSizeInBtnInFullScreen);
+  transition-property: all;
+  transition-duration: var(--allTransitionDuration);
 }
 
-.slider-full-screen-btn-container {
-  top:  5vh;
-  position: absolute;
-  z-index: 1;
-  border: 1px solid white;
-  border-radius: 100px;
-  background-color: rgba(240,240,240,0.5);
-  height: 5vh;
-  width: 5vh;
-  text-align:center;
-  right:2vw;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+@keyframes slideTopToFullScreen {
+  from {
+    height: 45vh;
+  }
+
+  to {
+    height: 100vh;
+  }
 }
 
-.slider-full-screen-btn-container-full-screen {
-  top:  5vh;
-  position: absolute;
-  z-index: 1;
-  border: 1px solid white;
-  border-radius: 100px;
-  background-color: rgba(240,240,240,0.5);
-  height: 10vh;
-  width: 10vh;
-  text-align:center;
-  right:2vw;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+@keyframes slideFullScreenToTop {
+  from {
+    height: 100vh;
+    z-index: 2;
+  }
+
+  to {
+    z-index: 2;
+    height: 45vh;
+  }
+}
+
+@keyframes slideFullScreenBtnToFullScreen {
+  from {
+    top:  var(--slideArrowBtnSpaceFromTop);
+    height: var(--slideBtnSize);
+    width: var(--slideBtnSize);
+  }
+
+  to {
+    top:  var(--slideArrowBtnSpaceFromTopInFullScreen);
+    height: var(--slideBtnSizeInFullScreen);
+    width: var(--slideBtnSizeInFullScreen);
+  }
+}
+
+@keyframes slideFullScreenBtnToTop {
+  from {
+    top:  var(--slideArrowBtnSpaceFromTopInFullScreen);
+    height: var(--slideBtnSizeInFullScreen);
+    width: var(--slideBtnSizeInFullScreen);
+  }
+
+  to {
+    top:  var(--slideArrowBtnSpaceFromTop);
+    height: var(--slideBtnSize);
+    width: var(--slideBtnSize);
+  }
+}
+
+@keyframes slideFullScreenArrowsToFullScreen {
+  from {
+    font-size: var(--slideArrowSizeInBtn);
+  }
+
+  to {
+    font-size: var(--slideArrowSizeInBtnInFullScreen);
+  }
+}
+
+@keyframes slideFullScreenArrowsToTop {
+  from {
+    font-size: var(--slideArrowSizeInBtnInFullScreen);
+  }
+
+  to {
+    font-size: var(--slideArrowSizeInBtn);
+  }
 }

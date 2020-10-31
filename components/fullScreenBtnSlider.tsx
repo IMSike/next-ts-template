@@ -19,9 +19,9 @@ export default class FullScreenBtnSlider extends React.Component<Props, State> {
 		return (
 			<div className={this.props.fullScreen ? "slider-full-screen-btn-container-full-screen" : "slider-full-screen-btn-container"} onClick={this.props.action}>
 				{this.props.fullScreen?
-					<Icon path={mdiFullscreenExit} title={"Plein écran"} size={3} color="white"/>
+					<Icon path={mdiFullscreenExit} title={"Ecran réduit"} size={5} color={typeof Window === "undefined" ? "white" : getComputedStyle(document.documentElement).getPropertyValue('--mainColor')}/>
 				:
-					<Icon path={mdiFullscreen} title={"Plein écran"} size={3} color="white"/>
+					<Icon path={mdiFullscreen} title={"Plein écran"} size={3} color={typeof Window === "undefined" ? "white" : getComputedStyle(document.documentElement).getPropertyValue('--mainColor')}/>
 				}
 			</div>
 		);

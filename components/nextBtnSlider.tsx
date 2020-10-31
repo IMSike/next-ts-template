@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 
 interface Props {
+    fullScreen:Boolean;
     // action:any;
   //empty in our case
 }
@@ -13,7 +14,7 @@ interface State {
 export default class Test extends React.Component<Props, State> {
 	render() {
 		return (
-			<div className="slider-next-btn-container" onClick={this.props.action}>
+			<div className={this.props.fullScreen ? "slider-next-btn-container-full-screen" : "slider-next-btn-container"} onClick={this.props.action}>
 				<p>{">"}</p>
 			</div>
 		);

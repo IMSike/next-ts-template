@@ -1,5 +1,4 @@
 import React, { Component, useRef } from 'react'
-// import styles from '../styles/components/caroussel.css'
 import 'react-slideshow-image/dist/styles.css'
 import { Slide } from 'react-slideshow-image';
 import PrevBtnSlider from './prevBtnSlider.tsx';
@@ -35,8 +34,8 @@ const renderCarousel = (props: IProps) => {
 		return(
 			<div className="slide-container">
 				<FullScreenBtnSlider action={props.defineFullScreen} fullScreen={props.fullScreen}/>
-				<PrevBtnSlider action={back}/>
-				<NextBtnSlider action={next}/>
+				<PrevBtnSlider action={back} fullScreen={props.fullScreen}/>
+				<NextBtnSlider action={next} fullScreen={props.fullScreen}/>
 				<Slide ref={slideRef} {...properties}>
 					{slideImages.map((each, index) => (
 						<div key={index} className="each-slide">

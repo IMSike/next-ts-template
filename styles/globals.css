@@ -1,3 +1,36 @@
+:root {
+    /*  MARGIN */
+  --slideBtnSpaceFromSide: 2vw;
+  --slideArrowBtnSpaceFromTop: 20vh;
+  --slideArrowBtnSpaceFromTopInFullScreen: 45vh;
+  --slideFullScreenBtnSpaceFromTop: 5vh;
+  /*  SIZE */
+  /*      btn */
+  --slideBtnSize:5vh;
+  --slideBtnHoverSize:8vh;
+  --slideBtnSizeInFullScreen:8vh;
+  --slideBtnHoverSizeInFullScreen:10vh;
+  /*      arrows */
+  --slideArrowSizeInBtn:4vh;
+  --slideArrowHoverSizeInBtn:6vh;
+  --slideArrowSizeInBtnInFullScreen:6vh;
+  --slideArrowHoverSizeInBtnInFullScreen:7.5vh;
+  /*      borders */
+  --slideBorderBtnSize:2px;
+  /*  COLOR */
+  --slideBtnBackgroundColor: rgba(240,240,240,0.5);
+  --slideBtnHoverBackgroundColor: rgba(220,220,220,0.8);
+  --backgroundColorMainContainer: white;
+  --backgroundColorContactAndFooterContainer: #eaeaea;
+  --mainColor:green; /* for tiltes */
+  --textsColor:black; /* for texts */
+  /*  DURATIONS */
+  --allTransitionDuration:1s;
+  --animationDurationForFullScreen:2s;
+  --animationDurationForTop:1s;
+}
+
+
 html,
 body {
   padding: 0;
