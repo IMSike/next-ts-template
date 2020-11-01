@@ -1,5 +1,3 @@
-
-
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -34,6 +32,26 @@
   justify-content: center;
   align-items: center;
   background-color: var(--backgroundColorContactAndFooterContainer);
+}
+.footerTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
+}
+.footerText {
+  color: var(--textsColor);
+
+}
+.footerTitle {
+  font-size: 2rem;
+  color: var(--mainColor);
+}
+.footerText,
+.footerTitle {
+  margin: 0;
+  text-align: center;
 }
 
 .title {
@@ -81,9 +99,9 @@
 }
 
 .contactContainer {
-  flex:1;
+  flex:2;
   background-color: var(--backgroundColorContactAndFooterContainer);
-  padding: 0 1rem;
+  overflow: hidden;
 }
 .contactContentContainer {
   display: flex;
@@ -92,7 +110,7 @@
   flex-direction: column;
   position: fixed;
   top: 55vh;
-  right: 0;
+  right: 1vw;
 }
 
 .contentContainer,
@@ -151,4 +169,214 @@
 
 .cardSlideContentContainer {
   overflow: hidden;
+}
+
+.containerBufferLogo img {
+  height: 20vh;
+  position: fixed;
+  right:5vw;
+  top:25vh;
+  animation-duration: 4s;
+  animation-name: popLogo;
+}
+
+.logoThinImage {
+  height: 10vh !important;
+}
+
+.containerBufferLogo p {
+  position: fixed;
+  right:2vw;
+  top:24vh;
+  font-size: 5rem;
+  animation-duration: 4s;
+  animation-name: popLogo;
+  background-color: var(--backgroundColorContactAndFooterContainer);
+  height: var(--slideBtnSize);
+  width: var(--slideBtnSize);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 300px;
+  border: 2px solid var(--mainColor);
+  opacity:0.4;
+}
+
+.containerBufferLogo p:hover {
+  opacity:1;
+}
+
+.containerBufferLogo {
+  height: 0;
+  width: 0;
+}
+
+@media screen and (min-width: 3000px)
+{
+  .contactContentContainer {
+    right: 2vw;
+  }
+  .title {
+    font-size: 20rem;
+  }
+  .titleDesc {
+    font-size: 7rem;
+  }
+  .description {
+    font-size: 3rem;
+  }
+  .accroche {
+    font-size: 8rem;
+  }
+
+  .contactLine p {
+    font-size: 3rem;
+  }
+  .contactTitle {
+    font-size: 5rem;
+  }
+
+  .footer {
+    border-top:1px dotted var(--mainColor);
+  }
+  .footerText {
+    font-size: 3rem;
+  }
+  .footerTitle {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 1900px)
+{
+  .title {
+    font-size: 12rem;
+  }
+  .accroche {
+    font-size: 6rem;
+  }
+  .contactLine p {
+    font-size: 2rem;
+  }
+  .contactTitle {
+    font-size: 4rem;
+  }
+  .titleDesc {
+    font-size: 5rem;
+  }
+  .description {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 1280px)
+{
+  .main {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .titleDesc {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .accroche {
+    font-size: 1.5rem;
+  }
+
+  .cardSlideContainer {
+    width: 95vw;
+  }
+
+  .cardSlideContainerContent {
+    width: 85vw;
+    padding: 0;
+  }
+
+  .cardSlideBtn p {
+    font-size: 3rem;
+  }
+
+  .contactContainer {
+    padding: 0 0.5rem;
+  }
+  .contactContentContainer {
+    position: relative;
+    top:0;
+  }
+
+  .contentContainer,
+  .contactContainer {
+    width: 100%;
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .containerBufferLogo img {
+    height: 10vh;
+    align-self: center;
+    position: relative;
+    right:0;
+    top:0;
+    animation-duration: 8s;
+  }
+
+  .containerBufferLogo {
+    margin-top: -10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 10vh;
+  }
+
+  .contactLine {
+    padding: 0;
+  }
+  .contactLine p {
+    font-size: 1.25rem;
+  }
+  .contactTitle {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .footer {
+    border-top:1px dotted var(--mainColor);
+  }
+  .footerText {
+    font-size: 0.75rem;
+  }
+  .footerTitle {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px)
+{
+  .contactLine p {
+    font-size: 1rem;
+  }
+  .contactTitle {
+    font-size: 2rem;
+  }
+}
+
+@keyframes popLogo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

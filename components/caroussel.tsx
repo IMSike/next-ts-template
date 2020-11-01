@@ -17,12 +17,12 @@ const renderCarousel = (props: IProps) => {
 	const slideImages = infos.slideImages;
 	const properties = {
 		duration: 5000,
-		autoplay: false,
+		autoplay: true,
 		transitionDuration: 500,
 		arrows: false,
 		infinite: true,
 		easing: "ease",
-		indicators: (i) => <div className="indicator">{i + 1}</div>
+		// indicators: (i) => <div className="indicator">{i + 1}</div>
 	};
 	const back = () => {
 		slideRef.current.goBack();
